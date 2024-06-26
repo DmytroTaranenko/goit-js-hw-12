@@ -2,23 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link href="./css/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <load ="partials/header.html" />
+    <form class="form">
+      <input class="form-input" name="userInput" type="text" />
+      <button type="submit" class="form-btn">Search</button>
+    </form>
+    <ul class="gallery-list"></ul>
 
-    <section>
-      <h1>Example page title</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="./img/javascript.svg" alt="" />
-    </section>
-
-    <!-- Loads the specified .html file -->
-    <load ="partials/vite-promo.html" />
-
-    <script type="module" src="./main.js"></script>
+    <div class="wrap-js-btn">
+      <button class="js-btn hidden" type="submit">Load more</button>
+    </div>
+    <div class="loader hidden">Loading images, please wait...</div>
+    <script src="./main.js" type="module"></script>
   </body>
 </html>
