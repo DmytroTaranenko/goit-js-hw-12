@@ -75,13 +75,17 @@ refs.formEl.addEventListener('submit', async e => {
 })
 
 refs.jsBtn.addEventListener('click', async (e) => {
-    currentPage ++
+    hideBtn(refs.jsBtn)
+    showLoader(refs.loader)
+    currentPage++
     const data = await getImages(userInput, currentPage)
     const markup = imagesTemplate(data.hits)
     refs.galleryEl.insertAdjacentHTML('beforeend', markup)
     lightbox.refresh()
     checkMaxPage()
     scrollPage()
+    hideLoader(refs.loader)
+
 
     
 })

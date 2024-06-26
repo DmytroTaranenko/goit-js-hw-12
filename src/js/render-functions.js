@@ -39,7 +39,6 @@ export function hideLoader(loader) {
 
 export function showBtn(jsBtn) {
   jsBtn.classList.remove('hidden')
-  
 }
 
 export function hideBtn(jsBtn) {
