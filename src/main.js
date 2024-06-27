@@ -48,7 +48,7 @@ refs.formEl.addEventListener('submit', async e => {
     try {
         currentPage = 1;
         const data = await getImages(userInput, currentPage)
-        maxPage = data.totalHits / 15
+        maxPage = Math.ceil(data.totalHits / 15)
         if (data.hits.length !== 0) {
             const markup = imagesTemplate(data.hits)
             refs.galleryEl.innerHTML = markup
@@ -94,7 +94,13 @@ function checkMaxPage() {
     if (currentPage < maxPage) {
         showBtn(refs.jsBtn)
     } else {
+        infoMessage()
         hideBtn(refs.jsBtn)
+    }
+}
+
+function infoMessage() {
+    if (maxPage) {
         iziToast.info({
             title: 'Last page',
             message: "We're sorry, but you've reached the end of search results."
